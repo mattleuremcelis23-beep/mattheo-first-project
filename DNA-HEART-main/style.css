@@ -1,0 +1,69 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    background: #050005;
+}
+
+canvas {
+    position: fixed;
+    inset: 0;
+    display: block;
+    background: #050005;
+    cursor: crosshair;
+}
+
+.love-message {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: .45rem;
+    padding: .45rem .7rem;
+    border: 1px solid rgba(255, 70, 100, .45);
+    border-radius: 999px;
+    background: rgba(35, 0, 12, .55);
+    transform: translate(-50%, -50%);
+    color: #ffb0bc;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(.72rem, 1.2vw, .95rem);
+    font-weight: 400;
+    letter-spacing: .12rem;
+    opacity: 0;
+    pointer-events: none;
+    text-shadow: 0 0 8px #dc143c, 0 0 22px rgba(255, 23, 68, .75);
+    transition: opacity 1.8s ease, background 1.2s ease;
+    white-space: nowrap;
+    box-shadow: 0 0 18px rgba(220, 20, 60, .22), inset 0 0 12px rgba(220, 20, 60, .12);
+}
+
+.love-message span {
+    display: inline-block;
+    opacity: 1;
+}
+
+.love-message .heart-icon {
+    color: #ff1744;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.2em;
+    letter-spacing: 0;
+    text-shadow: 0 0 8px #ff1744, 0 0 16px #dc143c;
+}
+
+.love-message.visible {
+    opacity: .92;
+}
+
+.love-message.visible span {
+    opacity: 1;
+}
+
+@media (max-width: 520px) {
+    .love-message {
+        letter-spacing: .08rem;
+    }
+}
